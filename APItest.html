@@ -14,8 +14,23 @@
         // Define your API key
         const apiKey = 'II6dsQDctGjWeoHgnT5wPjXlyJVmmUbvASnh2Zay';
 
+        // Function to update the time string
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            document.getElementById("time").textContent = timeString;
+        }
+
+        // Update the time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 10000);
+
         // Define the URL
-        const apiUrl = 'https://iot.research.hamk.fi/api/v1/hamk/rooms/tsdata?room-id=10&startTime=2023-09-11T00:00:00Z&endTime=2023-09-11T12:30:00Z&fields=temperature,humidity,co2,light,motion,vdd';
+        const apiUrl = 'https://iot.research.hamk.fi/api/v1/hamk/rooms/tsdata?room-id=10&startTime=2023-09-11T00:00:00Z&endTime=2023-09-11T'+timeString+'Z&fields=temperature,humidity,co2,light,motion,vdd';
 
         // Create a function to fetch data and display it on the webpage
         async function fetchData() {
