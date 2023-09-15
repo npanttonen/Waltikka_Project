@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data</title>
+</head>
+<body>
+    <div id="data-container">
+        <!-- Data will be displayed here -->
+    </div>   
+    <!-- Include the time-functions.js file -->
+    <script src="time.js"></script>
+
+    <script type="text/javascript">
+        // Define your API key
+        const apiKey = 'II6dsQDctGjWeoHgnT5wPjXlyJVmmUbvASnh2Zay';
+
+        // Function to fetch data and display it on the webpage
+        async function fetchData() {
+            try {
+                // Get the current time string and one week ago date string
+                const dateString = getCurrentDateString();
+                const timeString = getCurrentTimeString();
+                const pastDateString = getOneWeekAgoDateString();
+
+                // Update the apiUrl with the time strings
+                const apiUrl = 'https://iot.research.hamk.fi/api/v1/hamk/rooms/tsdata?room-id=10&startTime='+pastDateString+'T'+timeString+'Z&endTime='+dateString+'T' + timeString + 'Z&fields=temperature';
+                
+
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        'x-api-key': apiKey
+                    }
+                });
+
+                const data = await response.json();
+                console.log(data)
+                // Display data in the 'data-container' div
+                document.getElementById('data-container').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Call the fetchData function when the page loads
+        window.onload = fetchData();
+    </script>
+</body>
+</html>
