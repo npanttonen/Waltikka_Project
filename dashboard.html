@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         
         .title{
@@ -20,9 +21,20 @@
           margin-left: 10px;
         }
 
+
         .floor1{
           margin-top: 20px;
           margin-left: 20px;
+        }
+
+        .btn{
+          
+          border: 0;
+          font-size: 1rem;
+          font-weight: 100;
+          margin: 1rem 0;
+          padding: 1rem 2rem;
+
         }
 
         .floor1btn{
@@ -49,101 +61,321 @@
           margin-top: 15px;
           margin-left: 10px;
         }
+
+        .btn101{
+          border-radius: 15px;
+        }
+
+
     </style>
 </head>
 
 <body style="background-color:powderblue;">
   <h1 class="title">Hotel Waltikka Sensory Board</h1>
 
-   <h3> Select the floor of room to be view:</h3>
+   <h3> Select the building to be view:</h3>
 
    <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Room number from
+          Building:
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">101 to 121</a>
-        <a class="dropdown-item" href="#">201 to 221</a>
-        <a class="dropdown-item" href="#">301 to 321</a>
+        <a class="dropdown-item" href="#">Building A:</a>
+        <a class="dropdown-item" href="#">Building B:</a>
+        <a class="dropdown-item" href="#">Building C:</a>
       </div>
     </div>
 
     <div class="floor1"> 
       <h5>Floor 1:</h5>
       <div class="floor1btn">
-        <button class="btn btn-primary" name="101" type="submit">101</button>
-        <button class="btn btn-primary" name="102" type="submit">102</button>
-        <button class="btn btn-primary" name="103" type="submit">103</button>
-        <button class="btn btn-primary" name="104" type="submit">104</button>
-        <button class="btn btn-primary" name="105" type="submit">105</button>
-        <button class="btn btn-primary" name="106" type="submit">106</button>
-        <button class="btn btn-primary" name="107" type="submit">107</button>
-        <button class="btn btn-primary" name="108" type="submit">108</button>
-        <button class="btn btn-primary" name="109" type="submit">109</button>
-        <button class="btn btn-primary" name="110" type="submit">110</button>
-        <button class="btn btn-primary" name="111" type="submit">111</button>
-        <button class="btn btn-primary" name="112" type="submit">112</button>
-        <button class="btn btn-primary" name="113" type="submit">113</button>
-        <button class="btn btn-primary" name="114" type="submit">114</button>
-        <button class="btn btn-primary" name="115" type="submit">115</button>
-        <button class="btn btn-primary" name="116" type="submit">116</button>
-        <button class="btn btn-primary" name="117" type="submit">117</button>
-        <button class="btn btn-primary" name="118" type="submit">118</button>
-        <button class="btn btn-primary" name="119" type="submit">119</button>
-        <button class="btn btn-primary" name="120" type="submit">120</button>
+        <button class="btn btn-primary" name="101" type="submit">
+          <b>101</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="102" type="submit">
+          <b>102</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="103" type="submit">
+          <b>103</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="104" type="submit">
+          <b>104</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="105" type="submit">
+          <b>105</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="106" type="submit">
+          <b>106</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="107" type="submit">
+          <b>107</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="108" type="submit">
+          <b>108</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="109" type="submit">
+          <b>109</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="110" type="submit">
+          <b>110</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="111" type="submit">
+          <b>111</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="112" type="submit">
+          <b>112</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="113" type="submit">
+          <b>113</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="114" type="submit">
+          <b>114</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="115" type="submit">
+          <b>115</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
       </div>
     </div>
     
     <div class="floor2"> 
       <h5>Floor 2:</h5>
       <div class="floor2btn">
-        <button class="btn btn-primary" name="201" type="submit">201</button>
-        <button class="btn btn-primary" name="202" type="submit">202</button>
-        <button class="btn btn-primary" name="203" type="submit">203</button>
-        <button class="btn btn-primary" name="204" type="submit">204</button>
-        <button class="btn btn-primary" name="205" type="submit">205</button>
-        <button class="btn btn-primary" name="206" type="submit">206</button>
-        <button class="btn btn-primary" name="207" type="submit">207</button>
-        <button class="btn btn-primary" name="208" type="submit">208</button>
-        <button class="btn btn-primary" name="209" type="submit">209</button>
-        <button class="btn btn-primary" name="210" type="submit">210</button>
-        <button class="btn btn-primary" name="211" type="submit">211</button>
-        <button class="btn btn-primary" name="212" type="submit">212</button>
-        <button class="btn btn-primary" name="213" type="submit">213</button>
-        <button class="btn btn-primary" name="214" type="submit">214</button>
-        <button class="btn btn-primary" name="215" type="submit">215</button>
-        <button class="btn btn-primary" name="216" type="submit">216</button>
-        <button class="btn btn-primary" name="217" type="submit">217</button>
-        <button class="btn btn-primary" name="218" type="submit">218</button>
-        <button class="btn btn-primary" name="219" type="submit">219</button>
-        <button class="btn btn-primary" name="220" type="submit">220</button>
+        <button class="btn btn-primary" name="201" type="submit">
+          <b>201</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="202" type="submit">
+          <b>202</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="203" type="submit">
+          <b>203</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="204" type="submit">
+          <b>204</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="205" type="submit">
+          <b>205</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="206" type="submit">
+          <b>206</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="207" type="submit">
+          <b>207</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="208" type="submit">
+          <b>208</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="209" type="submit">
+          <b>209</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="210" type="submit">
+          <b>210</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="211" type="submit">
+          <b>211</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="212" type="submit">
+          <b>212</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="213" type="submit">
+          <b>213</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="214" type="submit">
+          <b>214</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="215" type="submit">
+          <b>215</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
       </div>
     </div>
 
     <div class="floor3"> 
       <h5>Floor 3:</h5>
       <div class="floor3btn">
-        <button class="btn btn-primary" name="301" type="submit">301</button>
-        <button class="btn btn-primary" name="302" type="submit">302</button>
-        <button class="btn btn-primary" name="303" type="submit">303</button>
-        <button class="btn btn-primary" name="304" type="submit">304</button>
-        <button class="btn btn-primary" name="305" type="submit">305</button>
-        <button class="btn btn-primary" name="306" type="submit">306</button>
-        <button class="btn btn-primary" name="307" type="submit">307</button>
-        <button class="btn btn-primary" name="308" type="submit">308</button>
-        <button class="btn btn-primary" name="309" type="submit">309</button>
-        <button class="btn btn-primary" name="310" type="submit">310</button>
-        <button class="btn btn-primary" name="311" type="submit">311</button>
-        <button class="btn btn-primary" name="312" type="submit">312</button>
-        <button class="btn btn-primary" name="313" type="submit">313</button>
-        <button class="btn btn-primary" name="314" type="submit">314</button>
-        <button class="btn btn-primary" name="315" type="submit">315</button>
-        <button class="btn btn-primary" name="316" type="submit">316</button>
-        <button class="btn btn-primary" name="317" type="submit">317</button>
-        <button class="btn btn-primary" name="318" type="submit">318</button>
-        <button class="btn btn-primary" name="319" type="submit">319</button>
-        <button class="btn btn-primary" name="320" type="submit">320</button>
+        <button class="btn btn-primary" name="301" type="submit">
+          <b>301</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="302" type="submit">
+          <b>302</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="303" type="submit">
+          <b>303</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="304" type="submit">
+          <b>304</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="305" type="submit">
+          <b>305</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="306" type="submit">
+          <b>306</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="307" type="submit">
+          <b>307</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="308" type="submit">
+          <b>308</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="309" type="submit">
+          <b>309</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="310" type="submit">
+          <b>310</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="311" type="submit">
+          <b>311</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="312" type="submit">
+          <b>312</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="313" type="submit">
+          <b>313</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="314" type="submit">
+          <b>314</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
+        <button class="btn btn-primary" name="315" type="submit">
+          <b>315</b> </br>
+          <i class="bi bi-thermometer"></i>Temperature:</br>
+          Humidity:</br>
+          CO2:
+        </button>
       </div>
     </div>
+
+
+    <a class="btn101" href="contact.php" role="button">Contact us</a>
+    
 </body>
 </html>
