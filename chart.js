@@ -60,9 +60,9 @@ async function fetchData(roomNumber, timegap) {
 
         if (timegap == "week"){
             pastDateString = getOneWeekAgoDateString();
-            Chart.getChart(document.getElementById('chart-bars')).destroy();
-            Chart.getChart(document.getElementById('chart-line')).destroy();
-            Chart.getChart(document.getElementById('chart-line-tasks')).destroy(); 
+            Chart.getChart(document.getElementById('chart-temperature')).destroy();
+            Chart.getChart(document.getElementById('chart-humidity')).destroy();
+            Chart.getChart(document.getElementById('chart-co2')).destroy(); 
             //color the button after pressed
             document.getElementById("week").classList.toggle("pressed");
             document.getElementById("month").classList.remove("pressed");
@@ -70,18 +70,18 @@ async function fetchData(roomNumber, timegap) {
         }
         else if (timegap == "month"){
             pastDateString = getOneMonthAgoDateString();
-            Chart.getChart(document.getElementById('chart-bars')).destroy();
-            Chart.getChart(document.getElementById('chart-line')).destroy();
-            Chart.getChart(document.getElementById('chart-line-tasks')).destroy();
+            Chart.getChart(document.getElementById('chart-temperature')).destroy();
+            Chart.getChart(document.getElementById('chart-humidity')).destroy();
+            Chart.getChart(document.getElementById('chart-co2')).destroy();
             document.getElementById("week").classList.remove("pressed");
             document.getElementById("month").classList.toggle("pressed");
             document.getElementById("year").classList.remove("pressed");
         }
         else if (timegap == "year"){
             pastDateString = getOneYearAgoDateString();
-            Chart.getChart(document.getElementById('chart-bars')).destroy();
-            Chart.getChart(document.getElementById('chart-line')).destroy();
-            Chart.getChart(document.getElementById('chart-line-tasks')).destroy(); 
+            Chart.getChart(document.getElementById('chart-temperature')).destroy();
+            Chart.getChart(document.getElementById('chart-humidity')).destroy();
+            Chart.getChart(document.getElementById('chart-co2')).destroy(); 
             document.getElementById("week").classList.remove("pressed");
             document.getElementById("month").classList.remove("pressed");
             document.getElementById("year").classList.toggle("pressed");
@@ -128,7 +128,7 @@ async function fetchData(roomNumber, timegap) {
             chartTemperature[indexOfChart] = element[1];
         });
 
-        var ctx = document.getElementById("chart-bars").getContext("2d");
+        var ctx = document.getElementById("chart-temperature").getContext("2d");
 
         new Chart(ctx, {
             type: "bar",
@@ -209,7 +209,7 @@ async function fetchData(roomNumber, timegap) {
         });
 
 
-        var ctx2 = document.getElementById("chart-line").getContext("2d");
+        var ctx2 = document.getElementById("chart-humidity").getContext("2d");
 
         new Chart(ctx2, {
             type: "line",
@@ -291,7 +291,7 @@ async function fetchData(roomNumber, timegap) {
             },
         });
 
-        var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+        var ctx3 = document.getElementById("chart-co2").getContext("2d");
 
         new Chart(ctx3, {
             type: "line",
