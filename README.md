@@ -5,6 +5,7 @@ Nikita
   
 Parth
 - Have room historical data show all necessary grafs(temperature,CO2, etc.)
+it is done 
   
 Juuso
 - Make a header or change the current one
