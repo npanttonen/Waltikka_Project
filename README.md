@@ -15,3 +15,6 @@ Niko
   
 Jukka
 - Designing the alert system. 
+
+Allan
+- User manual for the page
