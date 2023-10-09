@@ -87,6 +87,15 @@
     <!-- End Navbar -->
 
     <div class="container-fluid py-4">
+
+      <h6 class="font-weight-bolder mb-0">ala-aula</h6>
+      <div class="buttons">
+        <input id="week" type="button" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(23, this.value),fetchco2(7, this.value)">
+        <input id="month" type="button" value="month" onclick="fetchtemperature(7, this.value),fetchhumidity(23, this.value),fetchco2(7, this.value)">
+        <input id="year" type="button" value="year" onclick="fetchtemperature(7, this.value),fetchhumidity(23, this.value),fetchco2(7, this.value)">
+      </div>
+      <input type="date" id="start" name="time-start" min="2022-12-01" />
+
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2 ">
@@ -99,7 +108,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 ">Temperature</h6>
-              <p class="text-sm ">Week Temperature of Room.</p>
+              <p class="text-sm ">Temperature of Room.</p>
               <hr class="dark horizontal">
             </div>
           </div>
@@ -115,7 +124,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 "> Humidity </h6>
-              <p class="text-sm ">Week Humidity of Room. </p>
+              <p class="text-sm ">Humidity of Room. </p>
               <hr class="dark horizontal">
             </div>
           </div>
@@ -131,7 +140,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 ">CO2</h6>
-              <p class="text-sm ">Week Co2 of Room.</p>
+              <p class="text-sm ">Co2 of Room.</p>
               <hr class="dark horizontal">
             </div>
           </div>
@@ -183,9 +192,9 @@
     window.onload = callAllFunction();
 
     function callAllFunction() {
-      fetchData(23);
-      fetchhumidity(23);
-      fetchco2(23);
+      fetchtemperature(23,null);
+      fetchhumidity(23,null);
+      fetchco2(23,null);
     }
   </script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
