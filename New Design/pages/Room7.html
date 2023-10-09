@@ -89,10 +89,10 @@
     <div class="container-fluid py-4">
 
       <h6 class="font-weight-bolder mb-0">ala-aula</h6>
-      <div class="buttons">
-        <input id="week" type="button" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
-        <input id="month" type="button" value="month" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
-        <input id="year" type="button" value="year" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
+      <div class="d-flex">
+        <button class="btn bg-gradient-dark px-3 mb-2 active" id="week" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Week</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" id="month" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Month</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" id="year" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Year</button>&nbsp
       </div>
       <input type="date" id="start" name="time-start" min="2022-12-01" />
 
@@ -108,7 +108,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 ">Temperature</h6>
-              <p class="text-sm ">Week Temperature of Room.</p>
+              <p class="text-sm ">Temperature of Room.</p>
               <hr class="dark horizontal">
             </div>
           </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 "> Humidity </h6>
-              <p class="text-sm ">Week Humidity of Room. </p>
+              <p class="text-sm ">Humidity of Room. </p>
               <hr class="dark horizontal">
             </div>
           </div>
@@ -140,7 +140,7 @@
             </div>
             <div class="card-body">
               <h6 class="mb-0 ">CO2</h6>
-              <p class="text-sm ">Week Co2 of Room.</p>
+              <p class="text-sm ">Co2 of Room.</p>
               <hr class="dark horizontal">
             </div>
           </div>
