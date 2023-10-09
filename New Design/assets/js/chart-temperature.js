@@ -293,7 +293,7 @@ async function fetchtemperature(roomNumber, timegap) {
                                 weight: 300,
                                 family: "Roboto",
                                 style: 'normal',
-                                lineHeight: 2
+                                lineHeight: 1
                             },
                         }
                     },
