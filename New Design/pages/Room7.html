@@ -89,12 +89,13 @@
     <div class="container-fluid py-4">
 
       <h6 class="font-weight-bolder mb-0">ala-aula</h6>
-      <div class="d-flex">
-        <button class="btn bg-gradient-dark px-3 mb-2 active" id="week" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Week</button>&nbsp
-        <button class="btn bg-gradient-dark px-3 mb-2 active" id="month" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Month</button>&nbsp
-        <button class="btn bg-gradient-dark px-3 mb-2 active" id="year" data-class="bg-gradient-dark" value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Year</button>&nbsp
+      <div class="buttons">
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="week"  value="week" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Week</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="month" value="month" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Month</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="year" value="year" onclick="fetchtemperature(7, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">Year</button>&nbsp
+      
+        <input type="date" id="start" name="time-start" min="2022-12-01" />
       </div>
-      <input type="date" id="start" name="time-start" min="2022-12-01" />
 
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">

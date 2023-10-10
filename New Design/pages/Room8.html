@@ -90,11 +90,12 @@
 
       <h6 class="font-weight-bolder mb-0">ala-aula</h6>
       <div class="buttons">
-        <input id="week" type="button" value="week" onclick="fetchtemperature(8, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
-        <input id="month" type="button" value="month" onclick="fetchtemperature(8, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
-        <input id="year" type="button" value="year" onclick="fetchtemperature(8, this.value),fetchhumidity(7, this.value),fetchco2(7, this.value)">
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="week"  value="week" onclick="fetchtemperature(8, this.value),fetchhumidity(8, this.value),fetchco2(8, this.value)">Week</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="month" value="month" onclick="fetchtemperature(8, this.value),fetchhumidity(8, this.value),fetchco2(8, this.value)">Month</button>&nbsp
+        <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="year" value="year" onclick="fetchtemperature(8, this.value),fetchhumidity(8, this.value),fetchco2(8, this.value)">Year</button>&nbsp
+      
+        <input type="date" id="start" name="time-start" min="2022-12-01" />
       </div>
-      <input type="date" id="start" name="time-start" min="2022-12-01" />
 
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
