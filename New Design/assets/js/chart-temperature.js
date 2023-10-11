@@ -274,6 +274,7 @@ async function fetchtemperature(roomNumber, timegap) {
             }
         }else{
             const dailyData = {};
+            const dailyData2 = {};
 
             // Loop through the data received from the API
             data.results[0].series[0].values.forEach(element => {
@@ -292,6 +293,22 @@ async function fetchtemperature(roomNumber, timegap) {
                 dailyData[dateKey].sum += element[1];
                 dailyData[dateKey].count++;
             });
+            data2.results[0].series[0].values.forEach(element => {
+                const resultDate = new Date(element[0]);
+                const month = (resultDate.getMonth() + 1).toString().padStart(2, '0');
+                const day = resultDate.getDate().toString().padStart(2, '0');
+                
+                // Create a key in the monthlyData object based on year and month
+                const dateKey = `${month}-${day}`;
+                console.log(dateKey)
+                if (!dailyData2[dateKey]) {
+                    dailyData2[dateKey] = { sum: 0, count: 0 };
+                }
+
+                // Accumulate temperature values for each month
+                dailyData2[dateKey].sum += element[1];
+                dailyData2[dateKey].count++;
+            });
 
             // Calculate monthly averages and populate chart data arrays
             for (const dateKey in dailyData) {
@@ -301,6 +318,15 @@ async function fetchtemperature(roomNumber, timegap) {
                 chartDate[indexOfChart] = `${month}-${day}`;
                 chartTemperature[indexOfChart] = avgTemperature;
                 indexOfChart++;
+            }
+            // Calculate monthly averages and populate chart data arrays
+            for (const dateKey in dailyData2) {
+                const [day, month] = dateKey.split('-');
+                const avgTemperature = dailyData2[dateKey].sum / dailyData2[dateKey].count;
+                console.log(avgTemperature)
+                chartDate2[indexOfChart2] = `${month}-${day}`;
+                chartTemperature2[indexOfChart2] = avgTemperature;
+                indexOfChart2++;
             }
         }
         console.log(chartDate)
