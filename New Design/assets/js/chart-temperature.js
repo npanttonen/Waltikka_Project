@@ -358,7 +358,7 @@ async function fetchtemperature(roomNumber, timegap) {
                         pointRadius: 0,
                         pointBackgroundColor: "rgba(255, 255, 255, .8)",
                         pointBorderColor: "transparent",
-                        borderColor: "rgba(255, 0, 0, .8)", // Red color for the outside temperature line
+                        borderColor: "rgba(0, 0, 255, .8)", // Blue color for the outside temperature line
                         borderWidth: 4,
                         backgroundColor: "transparent",
                         fill: true,
