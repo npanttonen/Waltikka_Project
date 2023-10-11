@@ -65,7 +65,6 @@
       data-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <h6 class="font-weight-bolder mb-0">ala-aula</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -87,29 +86,27 @@
     <!-- End Navbar -->
 
     <div class="container-fluid py-4">
-
-      <h6 class="font-weight-bolder mb-0">ala-aula</h6>
+      <h6 class="font-weight-bolder mb-0">Ala-aulan narikka</h6>
       <div class="buttons">
         <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="week"  value="week" onclick="fetchtemperature(14, this.value),fetchhumidity(14, this.value),fetchco2(14, this.value)">Week</button>&nbsp
         <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="month" value="month" onclick="fetchtemperature(14, this.value),fetchhumidity(14, this.value),fetchco2(14, this.value)">Month</button>&nbsp
         <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" id="year" value="year" onclick="fetchtemperature(14, this.value),fetchhumidity(14, this.value),fetchco2(14, this.value)">Year</button>&nbsp
       
-        <input type="date" id="start" name="time-start" min="2022-12-01" />
+        <input class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" type="date" id="start" name="time-start" min="2022-12-01" />
       </div>
+
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2 ">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-temperature" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart-temperature" class="chart-canvas" height="200"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Temperature</h6>
-              <p class="text-sm ">Temperature of Room.</p>
-              <hr class="dark horizontal">
+              <h6 class="mb-0 ">Temperature + outside Temperature</h6>
             </div>
           </div>
         </div>
@@ -118,14 +115,13 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-humidity" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart-humidity" class="chart-canvas" height="200"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
               <h6 class="mb-0 "> Humidity </h6>
-              <p class="text-sm ">Humidity of Room. </p>
-              <hr class="dark horizontal">
+
             </div>
           </div>
         </div>
@@ -134,14 +130,12 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-co2" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart-co2" class="chart-canvas" height="200"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
               <h6 class="mb-0 ">CO2</h6>
-              <p class="text-sm ">Co2 of Room.</p>
-              <hr class="dark horizontal">
             </div>
           </div>
         </div>
