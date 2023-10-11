@@ -117,20 +117,31 @@ async function fetchtemperature(roomNumber, timegap) {
 
         // Update the apiUrl with the time strings
         const apiUrl = 'https://iot.research.hamk.fi/api/v1/hamk/rooms/tsdata?room-id=' + roomNumber + '&startTime=' + pastDateString + 'T' + timeString + 'Z&endTime=' + dateString + 'T' + timeString + 'Z&fields=temperature';
-
-
+        const api2Url = 'https://iot.research.hamk.fi/api/v1/hamk/weather?place=Valkeakoski&starttime='+pastDateString+'T'+timeString+'Z&endtime='+dateString+'T'+timeString+'Z&fields=t2m'
+0
         const response = await fetch(apiUrl, {
             headers: {
                 'x-api-key': apiKey
             }
         });
+        const response2 = await fetch(api2Url, {
+            
+        });
 
         const data = await response.json();
+        const data2 = await response2.json();
         console.log(data);
+        console.log(data2);
+
+        const outsideTemperature = data2.temperature;
+
 
         let chartDate = [];
         let chartTemperature = [];
+        let chartDate2 = [];
+        let chartTemperature2 = [];
         let indexOfChart = 0;
+        let indexOfChart2 = 0;
         let indexOfPastWeek = 7;
         let pastDate = new Date(new Date());
         pastDate.setDate(pastDate.getDate() - indexOfPastWeek);
@@ -149,6 +160,7 @@ async function fetchtemperature(roomNumber, timegap) {
         // Calculate monthly averages if timegap is "year"
         if (timegap === "year") {
             const monthlyData = {};
+            const monthlyData2 = {};
 
             // Loop through the data received from the API
             data.results[0].series[0].values.forEach(element => {
@@ -167,6 +179,22 @@ async function fetchtemperature(roomNumber, timegap) {
                 monthlyData[dateKey].sum += element[1];
                 monthlyData[dateKey].count++;
             });
+            data2.results[0].series[0].values.forEach(element => {
+                const resultDate = new Date(element[0]);
+                const year = resultDate.getUTCFullYear();
+                const month = resultDate.getUTCMonth();
+
+                // Create a key in the monthlyData object based on year and month
+                const dateKey = `${year}-${month}`;
+                console.log(dateKey)
+                if (!monthlyData2[dateKey]) {
+                    monthlyData2[dateKey] = { sum: 0, count: 0 };
+                }
+
+                // Accumulate temperature values for each month
+                monthlyData2[dateKey].sum += element[1];
+                monthlyData2[dateKey].count++;
+            });
 
             // Calculate monthly averages and populate chart data arrays
             for (const dateKey in monthlyData) {
@@ -177,9 +205,20 @@ async function fetchtemperature(roomNumber, timegap) {
                 chartTemperature[indexOfChart] = avgTemperature;
                 indexOfChart++;
             }
+
+            // Calculate monthly averages and populate chart data arrays
+            for (const dateKey in monthlyData2) {
+                const [year, month] = dateKey.split('-');
+                const monthName = monthNames[parseInt(month)];
+                const avgTemperature = monthlyData2[dateKey].sum / monthlyData2[dateKey].count;
+                chartDate2[indexOfChart2] = `${monthName}-${year}`;
+                chartTemperature2[indexOfChart2] = avgTemperature;
+                indexOfChart2++;
+            }
             
         }else if(timegap === "month"){
-            const weeklyData = {};
+            const dailyData = {};
+            const dailyData2 = {};
 
             // Loop through the data received from the API
             data.results[0].series[0].values.forEach(element => {
@@ -190,23 +229,48 @@ async function fetchtemperature(roomNumber, timegap) {
                 // Create a key in the monthlyData object based on year and month
                 const dateKey = `${month}-${day}`;
                 console.log(dateKey)
-                if (!weeklyData[dateKey]) {
-                    weeklyData[dateKey] = { sum: 0, count: 0 };
+                if (!dailyData[dateKey]) {
+                    dailyData[dateKey] = { sum: 0, count: 0 };
                 }
 
                 // Accumulate temperature values for each month
-                weeklyData[dateKey].sum += element[1];
-                weeklyData[dateKey].count++;
+                dailyData[dateKey].sum += element[1];
+                dailyData[dateKey].count++;
+            });
+            data2.results[0].series[0].values.forEach(element => {
+                const resultDate = new Date(element[0]);
+                const month = (resultDate.getMonth() + 1).toString().padStart(2, '0');
+                const day = resultDate.getDate().toString().padStart(2, '0');
+                const week = resultDate.getDate().toString().padStart(2, '0');
+                // Create a key in the monthlyData object based on year and month
+                const dateKey = `${month}-${day}`;
+                console.log(dateKey)
+                if (!dailyData2[dateKey]) {
+                    dailyData2[dateKey] = { sum: 0, count: 0 };
+                }
+
+                // Accumulate temperature values for each month
+                dailyData2[dateKey].sum += element[1];
+                dailyData2[dateKey].count++;
             });
 
             // Calculate monthly averages and populate chart data arrays
-            for (const dateKey in weeklyData) {
+            for (const dateKey in dailyData) {
                 const [day, month] = dateKey.split('-');
-                const avgTemperature = weeklyData[dateKey].sum / weeklyData[dateKey].count;
+                const avgTemperature = dailyData[dateKey].sum / dailyData[dateKey].count;
                 console.log(avgTemperature)
                 chartDate[indexOfChart] = `${month}-${day}`;
                 chartTemperature[indexOfChart] = avgTemperature;
                 indexOfChart++;
+            }
+            // Calculate monthly averages and populate chart data arrays
+            for (const dateKey in dailyData2) {
+                const [day, month] = dateKey.split('-');
+                const avgTemperature = dailyData2[dateKey].sum / dailyData2[dateKey].count;
+                console.log(avgTemperature)
+                chartDate2[indexOfChart2] = `${month}-${day}`;
+                chartTemperature2[indexOfChart2] = avgTemperature;
+                indexOfChart2++;
             }
         }else{
             const dailyData = {};
@@ -245,22 +309,37 @@ async function fetchtemperature(roomNumber, timegap) {
         new Chart(ctx, {
             type: "line",
             data: {
-                labels: chartDate,
-                datasets: [{
-                    label: "Temperature",
-                    tension: 0,
-                    borderWidth: 0,
-                    pointRadius: 0,
-                    pointBackgroundColor: "rgba(255, 255, 255, .8)",
-                    pointBorderColor: "transparent",
-                    borderColor: "rgba(255, 255, 255, .8)",
-                    borderWidth: 4,
-                    backgroundColor: "transparent",
-                    fill: true,
-                    data: chartTemperature,
-                    maxBarThickness: 6
-
-                }],
+                labels: chartDate,chartDate2,
+                datasets: [
+                    {
+                        label: "Temperature",
+                        tension: 0,
+                        borderWidth: 0,
+                        pointRadius: 0,
+                        pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                        pointBorderColor: "transparent",
+                        borderColor: "rgba(255, 255, 255, .8)",
+                        borderWidth: 4,
+                        backgroundColor: "transparent",
+                        fill: true,
+                        data: chartTemperature,
+                        maxBarThickness: 6
+                    },
+                    {
+                        label: "Outside Temperature",
+                        tension: 0,
+                        borderWidth: 0,
+                        pointRadius: 0,
+                        pointBackgroundColor: "rgba(255, 255, 255, .8)",
+                        pointBorderColor: "transparent",
+                        borderColor: "rgba(255, 0, 0, .8)", // Red color for the outside temperature line
+                        borderWidth: 4,
+                        backgroundColor: "transparent",
+                        fill: true,
+                        data: chartTemperature2,
+                        maxBarThickness: 6
+                    }
+            ],
             },
             options: {
                 responsive: true,
@@ -293,7 +372,7 @@ async function fetchtemperature(roomNumber, timegap) {
                                 weight: 300,
                                 family: "Roboto",
                                 style: 'normal',
-                                lineHeight: 1
+                                lineHeight: 0.5
                             },
                         }
                     },
