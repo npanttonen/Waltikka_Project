@@ -1,22 +1,6 @@
-# Design-Factory-Group-11
+A User interface for Indoor Air Quality Sensors including:
+- Live data
+- Past data shown visually with graphs
+- Alerts when data values are too low or high for a given time
 
-Nikita
-- Put live data into dashboard
-  
-Parth
-- Have room historical data show all necessary grafs(temperature,CO2, etc.)
-it is done
-- Implementing alert system
-  
-Juuso
-- Make a header or change the current one
-  
-Niko
-- Make grafs for different timeframes(1 week, 1month, 1year) preferably in a dropdown down menu
-  
-Jukka
-- Designing the alert system.
-- Glossary.
-
-Allan
-- User manual for the page
+![image](https://github.com/user-attachments/assets/ed9633f9-43f4-4e21-8824-8e300b36e76d)
