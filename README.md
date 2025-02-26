@@ -1,4 +1,4 @@
-A User interface for Indoor Air Quality Sensors including:
+A User interface for Waltikka hotel:s Indoor Air Quality Sensors including:
 - Live data
 - Past data shown visually with graphs
 - Alerts when data values are too low or high for a given time
